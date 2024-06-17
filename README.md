@@ -22,7 +22,7 @@ Near UI (console in this case). Could contain frameworks like Express
 3. Execute ```npm install```
 4. ```docker compose up -d``` to start databases
 5. Execute ```npm run dev```
-
+6. ```npx prisma migrate dev``` if you need to fix prisma
 ```
 PORT=3000
 MAILER_EMAIL=

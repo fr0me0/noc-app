@@ -5,7 +5,7 @@ interface sendLogEmailUseCase {
     execute: (to: string | string[]) => Promise<boolean>;
 }
 
-export class sendEmailLogs implements sendLogEmailUseCase {
+export class SendEmailLogs implements sendLogEmailUseCase {
     constructor(
        private readonly emailService: EmailService,
        private readonly logRepository: LogRepository,  
