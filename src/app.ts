@@ -12,12 +12,5 @@ async function main() {
         dbName: envs.MONGO_DB_NAME,
     });
 
-    // Crear una coleccion = tables, documento = registro
-    const newLog = await LogModel.create({
-        message: 'Test Message desde Mongo',
-        origin: 'App.ts',
-        level: ''
-    })
-
-    // Server.start();
+    Server.start();
 }

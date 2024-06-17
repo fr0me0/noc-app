@@ -19,6 +19,9 @@ Near UI (console in this case). Could contain frameworks like Express
 # dev
 1. Clone the file .env.template to .env
 2. Configure environment variables
+3. Execute ```npm install```
+4. ```docker compose up -d``` to start databases
+5. Execute ```npm run dev```
 
 ```
 PORT=3000

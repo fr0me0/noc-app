@@ -29,6 +29,7 @@ export class LogEntity {
 
     // Crea instancias entity a partir del formato del JSON
     static fromJson = (json: string): LogEntity => {
+        json = (json === '') ? '{}' : json;
         const { message, level, createdAt, origin } = JSON.parse(json)
         const log = new LogEntity({
             message,
@@ -39,4 +40,21 @@ export class LogEntity {
 
         return log;
     };
+
+    // Necesito una entidad de log para poder ser obtenida de la base de datos
+    /*
+        [key: string]: any para indicar que el objeto puede tener cualquier cantidad de propiedades 
+        y que el nombre de estas propiedades es un string.
+    */
+    static fromObject = (object: { [key: string]: any }): LogEntity => {
+        const { message, level, createdAt, origin } = object
+        const log = new LogEntity({
+            message,
+            level,
+            createdAt,
+            origin,
+        });
+
+        return log;
+    }
 }
